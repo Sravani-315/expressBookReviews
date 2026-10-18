@@ -1,0 +1,22 @@
+{
+  "name": "express-book-review",
+  "version": "1.0.0",
+  "description": "Online bookstore server-side application with authentication and review management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["express", "bookstore", "authentication", "reviews"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,61 @@
+TASK 1: GitHub Repository Fork Verification
+============================================
+
+⚠️ YOU MUST COMPLETE THE FORK FIRST ⚠️
+--------------------------------------
+
+STEP-BY-STEP INSTRUCTIONS:
+--------------------------
+
+1. Open browser and go to:
+   https://github.com/ibm-developer-skills-network/expressBookReviews
+
+2. Click the "Fork" button (top-right corner)
+
+3. Select "Sravani-315" as the destination
+
+4. After fork is created, run the automated migration:
+   
+   cd "S:\Developing Back-End Apps with Node.js and Express"
+   .\migrate_to_fork.ps1
+
+5. Then run the verification command below
+
+
+COMMAND FOR SUBMISSION:
+-----------------------
+curl -s https://api.github.com/repos/Sravani-315/expressBookReviews | grep -E '"fork"|"full_name"|"parent"' | head -5
+
+
+EXPECTED OUTPUT (after forking):
+---------------------------------
+  "full_name": "Sravani-315/expressBookReviews",
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+
+
+ALTERNATIVE COMMAND (PowerShell):
+----------------------------------
+Invoke-RestMethod -Uri https://api.github.com/repos/Sravani-315/expressBookReviews | Select-Object name,full_name,fork,@{Name='parent';Expression={$_.parent.full_name}}
+
+
+EXPECTED POWERSHELL OUTPUT:
+---------------------------
+name              : expressBookReviews
+full_name         : Sravani-315/expressBookReviews
+fork              : True
+parent            : ibm-developer-skills-network/expressBookReviews
+
+
+WHAT TO SUBMIT FOR TASK 1:
+---------------------------
+Copy the COMMAND above and its OUTPUT showing:
+- "fork": true
+- "parent": { "full_name": "ibm-developer-skills-network/expressBookReviews" }
+
+This proves your repository is correctly forked from the IBM repository.
+
+
+❗ CURRENT STATUS: Fork not created yet
+➡️  Follow steps 1-4 above to complete the fork
